@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northridge Command — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="screen">
+    <section class="card" role="dialog" aria-label="Login form">
+      <header class="brand">
+        <!-- Replace the logo src with your hosted logo URL -->
+        <img src="./logo-placeholder.svg" alt="Northridge logo" class="logo" />
+        <h1 class="brand-title">NORTHRIDGE</h1>
+        <p class="brand-sub">COMMAND</p>
+      </header>
+
+      <form id="loginForm" class="form" autocomplete="on">
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" name="email" type="email" placeholder="name@company.com" required>
+
+        <label class="label" for="password">Password</label>
+        <input class="input" id="password" name="password" type="password" placeholder="••••••••" required>
+
+        <button class="btn" type="submit">Log In</button>
+
+        <div class="meta">
+          <a class="link muted" href="#" aria-label="Forgot password">Forgot password?</a>
+          <span class="sep">•</span>
+          <a class="link" href="#" aria-label="Sign up">Sign up</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
