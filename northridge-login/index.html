@@ -43,7 +43,7 @@
   <main class="screen">
     <section class="card" role="dialog" aria-label="Login form">
       <header class="brand">
-        <!-- Replace this SVG with your real logo if you have one -->
+        <!-- Replace this SVG with your real Northridge logo if you want -->
         <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           <rect width="120" height="120" rx="24" fill="#0f1216"/>
           <path d="M68 30L92 54L60 86L36 62L68 30Z" fill="#2F67FF" opacity="0.9"/>
@@ -73,7 +73,7 @@
 <script>
   document.getElementById('loginForm').addEventListener('submit', function(e){
     e.preventDefault();
-    const email = document.getElementById('email').value;
+    var email = document.getElementById('email').value;
     alert('Logged in as ' + email + ' (demo)');
   });
 </script>
