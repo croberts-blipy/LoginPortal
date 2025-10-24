@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Northridge Command — Login</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Northridge Command — Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0f12; --panel:#14171b; --border:#23272e; --muted:#9aa3ae;
+    --text:#e6e9ed; --accent:#2f67ff; --shadow:0 10px 30px rgba(0,0,0,.45); --radius:14px;
+  }
+  *{box-sizing:border-box} html,body{height:100%}
+  body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -20%,#18202a33,transparent 60%),var(--bg);
+    color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .screen{min-height:100vh;display:grid;place-items:center;padding:24px}
+  .card{width:100%;max-width:360px;background:linear-gradient(180deg,#15191e,#121518);
+    border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px 28px}
+  .brand{text-align:center;margin-bottom:18px}
+  .logo{width:56px;height:56px;opacity:.95;margin:0 auto 8px;display:block}
+  .brand-title{margin:0;font-size:22px;letter-spacing:1.6px;font-weight:700}
+  .brand-sub{margin:0;margin-top:2px;font-size:12px;letter-spacing:4px;color:var(--muted)}
+  .form{display:flex;flex-direction:column;margin-top:14px}
+  .label{font-size:12px;color:#c8d0da;margin:12px 0 8px 2px}
+  .input{width:100%;background:#12161b;border:1px solid var(--border);color:var(--text);
+    padding:11px 12px;border-radius:10px;outline:none;transition:border .2s,box-shadow .2s}
+  .input::placeholder{color:#6b7480}
+  .input:focus{border-color:#3554ff;box-shadow:0 0 0 3px rgba(53,84,255,.18)}
+  .btn{margin-top:18px;padding:12px 14px;width:100%;background:linear-gradient(180deg,#3a6bff,#2f67ff);
+    color:#fff;border:none;border-radius:10px;font-weight:600;letter-spacing:.2px;cursor:pointer;
+    transition:transform .06s ease,filter .2s ease}
+  .btn:hover{filter:brightness(1.05)} .btn:active{transform:translateY(1px)}
+  .meta{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
+  .link{color:var(--accent);text-decoration:none} .link.muted{color:var(--muted)} .link:hover{text-decoration:underline}
+  .sep{margin:0 6px;color:#5f6771}
+  @media (max-width:420px){.card{padding:28px 22px;border-radius:12px}.brand-title{font-size:20px}}
+</style>
 </head>
 <body>
   <main class="screen">
     <section class="card" role="dialog" aria-label="Login form">
       <header class="brand">
-        <!-- Replace the logo src with your hosted logo URL -->
-        <img src="./logo-placeholder.svg" alt="Northridge logo" class="logo" />
+        <!-- Replace this SVG with your real logo if you have one -->
+        <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="120" rx="24" fill="#0f1216"/>
+          <path d="M68 30L92 54L60 86L36 62L68 30Z" fill="#2F67FF" opacity="0.9"/>
+          <path d="M48 40L68 60L48 80L28 60L48 40Z" fill="#7FA0FF" opacity="0.5"/>
+        </svg>
         <h1 class="brand-title">NORTHRIDGE</h1>
         <p class="brand-sub">COMMAND</p>
       </header>
@@ -29,14 +63,19 @@
         <button class="btn" type="submit">Log In</button>
 
         <div class="meta">
-          <a class="link muted" href="#" aria-label="Forgot password">Forgot password?</a>
-          <span class="sep">•</span>
-          <a class="link" href="#" aria-label="Sign up">Sign up</a>
+          <a class="link muted" href="#">Forgot password?</a><span class="sep">•</span>
+          <a class="link" href="#">Sign up</a>
         </div>
       </form>
     </section>
   </main>
 
-  <script src="./script.js"></script>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    alert('Logged in as ' + email + ' (demo)');
+  });
+</script>
 </body>
 </html>
